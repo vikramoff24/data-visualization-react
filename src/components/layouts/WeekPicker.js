@@ -89,12 +89,10 @@ export default function WeekPicker() {
           onWeekClick={handleWeekClick}
         />
         {selectedDays.length === 7 && (
-          <div className="week-display">
-            <div className="week">
-              {moment(selectedDays[0]).format("LL")} –{" "}
-              {moment(selectedDays[6]).format("LL")}
-            </div>
-          </div>
+          <p className="week-display">
+            {moment(selectedDays[0]).format("LL")} –{" "}
+            {moment(selectedDays[6]).format("LL")}
+          </p>
         )}
 
         <Helmet>

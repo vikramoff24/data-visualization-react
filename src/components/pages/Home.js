@@ -9,9 +9,9 @@ const Home = () => {
   const { windyDay } = dataContext;
 
   const [windy, setWindy] = useState({
-    deviceA: "No Date to Show",
-    deviceB: "No Date to Show",
-    deviceC: "No Date to Show",
+    deviceA: "Select A Week to See Data",
+    deviceB: "Select A Week to See Data",
+    deviceC: "Select A Week to See Data",
   });
 
   useEffect(() => {
@@ -69,17 +69,17 @@ const Home = () => {
         <div className="row g-2">
           <div className="col-lg-4">
             <div>
-              <WindyItem date={windy.deviceA} />
+              <WindyItem device="Device A" date={windy.deviceA} />
             </div>
           </div>
           <div className="col-lg-4">
             <div>
-              <WindyItem date={windy.deviceB} />
+              <WindyItem device="Device B" date={windy.deviceB} />
             </div>
           </div>
           <div className="col-lg-4">
             <div>
-              <WindyItem date={windy.deviceC} />
+              <WindyItem device="Device C" date={windy.deviceC} />
             </div>
           </div>
         </div>

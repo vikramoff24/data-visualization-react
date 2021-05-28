@@ -17,7 +17,6 @@ const TimeSeriesPage = () => {
                 datakey2={data.datakey2}
                 datakey3={data.datakey3}
               />
-              ;
             </div>
           ))}
         </div>

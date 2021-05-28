@@ -50,8 +50,9 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 0px;
+  padding-left: 20px;
   border-radius: 4px;
+  margin-left: -20px;
 }
 
 .nav-text a:hover {
@@ -63,8 +64,7 @@
 }
 
 .navbar-toggle {
-  background-color: #45c6cc;
-  width: 100%;
+  width: 60%;
   height: 80px;
   display: flex;
   justify-content: start;
