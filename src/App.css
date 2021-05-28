@@ -11,7 +11,7 @@
 :root {
   --blue: rgb(21, 48, 75);
   --white: #fafafa;
-  --lightblue: rgb(165, 192, 221);
+  --lightblue: rgba(35, 75, 117, 0.637);
 }
 
 body {
