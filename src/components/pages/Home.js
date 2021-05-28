@@ -32,7 +32,32 @@ const Home = () => {
           <div className="col-lg-8">
             <div className="about-sec">
               <h1>Praan Device Dashboard</h1>
+
               <p>Made By Vikram S</p>
+              <hr></hr>
+              <p>
+                <ul>
+                  <li>
+                    Select Dates and Weeks between <b>19th March 2021</b> to
+                    <b>19th May 2021</b> (inclusive).
+                  </li>
+                  <li>
+                    Application is made keeping fuctionality at first place, If
+                    these is any UI glitch, please ignore it.
+                  </li>
+                  <li>
+                    Due to limited time given, Could not add validation for the
+                    pickers (Date,Time and Week), so while choosing it, please
+                    cross check twice.
+                  </li>
+                  <li>
+                    {" "}
+                    Please select correct time convention for start and end
+                    date, like it should be always <b>AM</b> to <b>PM</b> for a
+                    particular day.
+                  </li>
+                </ul>
+              </p>
             </div>
           </div>
           <div className="col-lg-4">

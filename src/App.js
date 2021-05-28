@@ -8,24 +8,17 @@ import TimeSeriesPage from "./components/pages/TimeSeriesPage";
 import ComparationPage from "./components/pages/ComparationPage";
 
 function App() {
-  useEffect(() => {
-    const datestr = "21/03/19,09:08:28";
 
-    const updateddate = datestr.replace(/\//g, "-");
-    const updatedtdate = updateddate.replace(/,/, "T");
-    const exactDate = "20" + updatedtdate;
-    console.log(new Date(exactDate));
-  }, []);
 
   return (
     <>
       <DataState>
+      {/* react router is used for routing to diffent pages without page refresh */}
         <Router>
           <div style={{ marginTop: "80px" }}>
             <Switch>
               <Route exact path="/" component={Home} />
-              {/* <Route path="/reports" component={Reports} />
-          <Route path="/products" component={Products} /> */}
+
               <Route exact path="/timeseriespage" component={TimeSeriesPage} />
 
               <Route

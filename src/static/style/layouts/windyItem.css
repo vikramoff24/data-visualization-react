@@ -8,3 +8,10 @@
   position: relative;
   box-shadow: 0px 1px 2px #c6c6c6;
 }
+
+.windy-item-sec p {
+  margin-top: 30px;
+  margin-left: 30px;
+  font-size: 35px;
+  font-weight: 300;
+}
