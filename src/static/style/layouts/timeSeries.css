@@ -1,17 +1,15 @@
-.comparation-graph-sec {
+.time-series-sec {
   border-radius: 25px;
   margin: 8px;
   margin-bottom: 30px;
   padding: 30px 25px 30px 25px;
   width: 100%;
-  /* height: 110px; */
+
   position: relative;
-  box-shadow: 1px 1px 2px #c6c6c6;
-  /* background-color: #fff; */
-  /* background: #fff; */
+  box-shadow: 0px 1px 2px #c6c6c6;
 }
 
-.comparation-graph-sec .title {
+.time-series-sec .title {
   margin-top: 10px;
   font-size: 20px;
   font-weight: 400;

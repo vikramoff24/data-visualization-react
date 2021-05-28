@@ -18,9 +18,19 @@ function addDate(data) {
   }));
 }
 
+function getTime(date) {
+  const formattedDate = formatDate(date);
+  const currDate = new Date(formattedDate);
+  return currDate.toLocaleString("en-US", {
+    hour: "numeric",
+    hour12: true,
+  });
+}
+
 function combineDate(dataA, dataB, dataC) {
   return dataA.map((deviceData, index) => ({
     date: formatDate(deviceData.t),
+    time: getTime(deviceData.t),
     Aw: deviceData.w,
     Ah: deviceData.h,
     Ap1: deviceData.p1,

@@ -1,52 +1,66 @@
-import React, { useEffect } from "react";
-import PickDate from "../layouts/DatePicker.js";
-import {
-  DeviceAData,
-  DeviceBData,
-  DeviceCData,
-  CombinedData,
-} from "../datas/DeviceData";
-import TimeSeries from "../layouts/TimeSeries.js";
-import ComparationGraph from "../layouts/ComparationGraph.js";
-import DateTimePicker from "../layouts/DateTimePicker.js";
+import React, { useState, useEffect, useContext } from "react";
+import WeekPicker from "../layouts/WeekPicker";
+import WindyItem from "../layouts/WindyItem";
+import DataContext from "../../context/data/dataContext";
 
-function Home() {
-  useEffect(() => {
-    console.log(DeviceAData);
-    console.log(DeviceBData);
-    console.log(DeviceCData);
-    console.log(CombinedData);
+import "../../static/style/Pages/home.css";
+const Home = () => {
+  const dataContext = useContext(DataContext);
+  const { windyDay } = dataContext;
+
+  const [windy, setWindy] = useState({
+    deviceA: "No Date to Show",
+    deviceB: "No Date to Show",
+    deviceC: "No Date to Show",
   });
 
+  useEffect(() => {
+    if (windyDay !== null && windyDay.deviceA !== undefined) {
+      const dateString = {
+        deviceA: windyDay.deviceA.toDateString(),
+        deviceB: windyDay.deviceB.toDateString(),
+        deviceC: windyDay.deviceC.toDateString(),
+      };
+      setWindy(dateString);
+    }
+  }, [windyDay]);
+
   return (
-    <div className="home">
-      <h1>Home</h1>
-      {/* <PickDate /> */}
-      <DateTimePicker />
-      <div className="container-fluid">
+    <div className="home ">
+      <div className="container">
         <div className="row g-2">
-          <div className="col-lg-4 col-md-6">
-            <ComparationGraph
-              title="All Device P1"
-              datakey1="Ap1"
-              datakey2="Bp1"
-              datakey3="Cp1"
-            />
+          <div className="col-lg-8">
+            <div className="about-sec">
+              <h1>Praan Device Dashboard</h1>
+              <p>Made By Vikram S</p>
+            </div>
           </div>
-          <div className="col-lg-4 col-md-6">
-            <ComparationGraph datakey1="Ap25" datakey2="Bp25" datakey3="Cp25" />
+          <div className="col-lg-4">
+            <div>
+              <WeekPicker />
+            </div>
           </div>
-          <div className="col-lg-4 col-md-6">
-            <ComparationGraph datakey1="Ap10" datakey2="Bp10" datakey3="Cp10" />
+        </div>
+        <div className="row g-2">
+          <div className="col-lg-4">
+            <div>
+              <WindyItem date={windy.deviceA} />
+            </div>
           </div>
-          <div className="col-lg-4 col-md-6">
-            <ComparationGraph datakey1="Aw" datakey2="Bw" datakey3="Cw" />
+          <div className="col-lg-4">
+            <div>
+              <WindyItem date={windy.deviceB} />
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div>
+              <WindyItem date={windy.deviceC} />
+            </div>
           </div>
         </div>
       </div>
-      {/* <TimeSeries /> */}
     </div>
   );
-}
+};
 
 export default Home;

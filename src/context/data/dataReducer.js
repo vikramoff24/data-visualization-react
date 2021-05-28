@@ -3,6 +3,7 @@ import {
   GET_DEVICE_A_DATA,
   GET_DEVICE_C_DATA,
   GET_COMBINED_DATA,
+  GET_WINDY_DAY,
 } from "../types";
 
 export default (state, action) => {
@@ -23,6 +24,13 @@ export default (state, action) => {
         combinedData: action.payload,
       };
     }
+    case GET_WINDY_DAY: {
+      return {
+        ...state,
+        windyDay: action.payload,
+      };
+    }
+
     default:
       return state;
   }

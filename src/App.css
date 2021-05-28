@@ -1,12 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Lato", sans-serif;
-}
-
 /* .home,
 .reports,
 .products { */
@@ -16,3 +7,89 @@
   justify-content: center;
   font-size: 3rem; */
 /* } */
+
+:root {
+  --blue: rgb(21, 48, 75);
+  --white: #fafafa;
+  --lightblue: rgb(165, 192, 221);
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-weight: var(--font-weight);
+  transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
+  /* background-color: var(--background-color); */
+}
+
+body.light {
+  --background: var(--white);
+  --background-color: var(--white);
+  --text-color: var(--blue);
+  --font-weight: 400;
+  /* --image: url("../day.jpg"); */
+}
+
+body.dark {
+  --background: var(--lightblue);
+  --background-color: var(--blue);
+  --text-color: var(--white);
+  --font-weight: 500;
+  /* --image: url("../night.jpg"); */
+}
+
+/* .about-sec.light {
+  --background: var(--white);
+}
+.about-sec.dark {
+  --background: var(--lightblue);
+}
+
+.about-sec {
+  background: var(--background);
+} */
+
+.comparation-graph-sec.light {
+  --background-color: var(--white);
+}
+.comparation-graph-sec.dark {
+  --background-color: var(--lightblue);
+}
+
+.comparation-graph-sec {
+  background: var(--background);
+}
+
+.time-series-sec.light {
+  --background-color: var(--white);
+}
+.time-series-sec.dark {
+  --background-color: var(--lightblue);
+}
+
+.time-series-sec {
+  background: var(--background);
+}
+
+.date-time-sec .light {
+  --background-color: var(--white);
+}
+.date-time-sec .dark {
+  --background-color: var(--lightblue);
+}
+
+.date-time-sec {
+  background: var(--background);
+}
+
+/* .week-picker-sec .light {
+  --background-color: var(--white);
+}
+.week-picker-sec .dark {
+  --background-color: var(--lightblue);
+}
+
+.week-picker-sec {
+  background: var(--background);
+} */

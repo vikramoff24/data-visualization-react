@@ -11,6 +11,7 @@ import {
   Legend,
   ReferenceLine,
   ResponsiveContainer,
+  Label,
 } from "recharts";
 import "../../static/style/layouts/comparationGraph.css";
 const ComparationGraph = (props) => {
@@ -26,7 +27,7 @@ const ComparationGraph = (props) => {
 
   return (
     <div className="comparation-graph-sec">
-      <p>{props.tile}</p>
+      <p className="title">{props.title}</p>
       <ResponsiveContainer width="100%" aspect={3}>
         <BarChart
           width={500}
@@ -41,13 +42,14 @@ const ComparationGraph = (props) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
+          <XAxis dataKey="time" />
+
           <YAxis />
           <Tooltip />
           <Legend />
           <ReferenceLine y={0} stroke="#000" />
           <Bar dataKey={props.datakey1} fill="#8884d8" stackId="stack" />
-          <Bar dataKey={props.datakey2} fill="#82ca9d" stackId="stack" />
+          <Bar dataKey={props.datakey2} fill="#810d0d" stackId="stack" />
           <Bar dataKey={props.datakey3} fill="#82chfG" stackId="stack" />
         </BarChart>
       </ResponsiveContainer>

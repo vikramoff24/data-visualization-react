@@ -1,7 +1,7 @@
 //   static demoUrl = "https://codesandbox.io/s/dashed-line-chart-dxwzg";
 
 import React, { useEffect, useState, useContext } from "react";
-
+import "../../static/style/layouts/timeSeries.css";
 import {
   LineChart,
   Line,
@@ -14,21 +14,21 @@ import {
 } from "recharts";
 import DataContext from "../../context/data/dataContext";
 
-const TimeSeries = () => {
+const TimeSeries = (props) => {
   const dataContext = useContext(DataContext);
-  const { deviceAData } = dataContext;
+  const { combinedData } = dataContext;
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    console.log(deviceAData);
-    if (deviceAData !== undefined) {
-      setData(deviceAData);
+    if (combinedData !== undefined) {
+      setData(combinedData);
     }
-  }, [deviceAData]);
+  }, [combinedData]);
 
   return (
-    <div>
-      <ResponsiveContainer width="70%" aspect={3}>
+    <div className="time-series-sec">
+      <p className="title">{props.title}</p>
+      <ResponsiveContainer width="100%" aspect={3}>
         <LineChart
           width={500}
           height={300}
@@ -41,28 +41,13 @@ const TimeSeries = () => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="t" interval="10" />
+          <XAxis dataKey="time" interval="10" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line
-            type="monotone"
-            dataKey="p1"
-            stroke="#8884d8"
-            strokeDasharray="5 5"
-          />
-          <Line
-            type="monotone"
-            dataKey="p2.5"
-            stroke="#82ca9d"
-            strokeDasharray="3 4 5 2"
-          />
-          <Line
-            type="monotone"
-            dataKey="p10"
-            stroke="#82ca65"
-            strokeDasharray="3 4 5 2"
-          />
+          <Line type="monotone" dataKey={props.datakey1} stroke="#810d0d" />
+          <Line type="monotone" dataKey={props.datakey2} stroke="#8884d8" />
+          <Line type="monotone" dataKey={props.datakey3} stroke="#e1db67" />
         </LineChart>
       </ResponsiveContainer>
     </div>

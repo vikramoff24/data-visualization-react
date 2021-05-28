@@ -2,6 +2,7 @@ import "date-fns";
 import React, { useState, useEffect, useContext } from "react";
 import Grid from "@material-ui/core/Grid";
 import DateFnsUtils from "@date-io/date-fns";
+import "../../static/style/layouts/dateTimePicker.css";
 import {
   MuiPickersUtilsProvider,
   TimePicker,
@@ -36,19 +37,20 @@ export default function DateTimePicker() {
   };
 
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Grid container justify="space-around">
-        <DatePicker
-          margin="normal"
-          variant="inline"
-          label="Date"
-          value={startDate}
-          onChange={(date) => {
-            handleStartDateChange(date);
-            handleEndDateChange(date);
-          }}
-        />
-        {/* <KeyboardDatePicker
+    <div className="date-time-sec">
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <Grid container justify="space-around">
+          <DatePicker
+            margin="normal"
+            variant="inline"
+            label="Date"
+            value={startDate}
+            onChange={(date) => {
+              handleStartDateChange(date);
+              handleEndDateChange(date);
+            }}
+          />
+          {/* <KeyboardDatePicker
           margin="normal"
           id="date-picker-dialog"
           label="Date picker dialog"
@@ -59,21 +61,22 @@ export default function DateTimePicker() {
             "aria-label": "change date",
           }}
         /> */}
-        <TimePicker
-          margin="normal"
-          variant="inline"
-          label="Start Time"
-          value={startDate}
-          onChange={handleStartDateChange}
-        />
-        <TimePicker
-          margin="normal"
-          variant="inline"
-          label="End Time"
-          value={endDate}
-          onChange={handleEndDateChange}
-        />
-      </Grid>
-    </MuiPickersUtilsProvider>
+          <TimePicker
+            margin="normal"
+            variant="inline"
+            label="Start Time"
+            value={startDate}
+            onChange={handleStartDateChange}
+          />
+          <TimePicker
+            margin="normal"
+            variant="inline"
+            label="End Time"
+            value={endDate}
+            onChange={handleEndDateChange}
+          />
+        </Grid>
+      </MuiPickersUtilsProvider>
+    </div>
   );
 }

@@ -4,6 +4,8 @@ import Navbar from "./components/layouts/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DataState from "./context/data/DataState";
 import Home from "./components/pages/Home";
+import TimeSeriesPage from "./components/pages/TimeSeriesPage";
+import ComparationPage from "./components/pages/ComparationPage";
 
 function App() {
   useEffect(() => {
@@ -19,15 +21,21 @@ function App() {
     <>
       <DataState>
         <Router>
-          <div style={{ zIndex: "2" }}>
-            <Navbar />
-          </div>
-
-          <Switch>
-            <Route exact path="/" component={Home} />
-            {/* <Route path="/reports" component={Reports} />
+          <div style={{ marginTop: "80px" }}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              {/* <Route path="/reports" component={Reports} />
           <Route path="/products" component={Products} /> */}
-          </Switch>
+              <Route exact path="/timeseriespage" component={TimeSeriesPage} />
+
+              <Route
+                exact
+                path="/comparationPage"
+                component={ComparationPage}
+              />
+            </Switch>
+          </div>
+          <Navbar />
         </Router>
       </DataState>
     </>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "../datas/SidebarData";
 import "../../static/style/layouts/navbar.css";
 import { IconContext } from "react-icons";
+import DarkMode from "./DarkMode";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -18,6 +19,9 @@ function Navbar() {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <div className="dark-mode-op">
+            <DarkMode />
+          </div>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
