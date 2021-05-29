@@ -2,6 +2,8 @@ import React from "react";
 import DeviceAJSON from "../../static/dataset/DeviceA.json";
 import DeviceBJSON from "../../static/dataset/DeviceB.json";
 import DeviceCJSON from "../../static/dataset/DeviceC.json";
+
+//This function converts the given date fromat into formatable ISO Dates
 function formatDate(date) {
   const datestr = date;
 
@@ -10,6 +12,7 @@ function formatDate(date) {
   const exactDate = "20" + updatedtdate;
   return exactDate;
 }
+
 //returns array of object with new dateformat
 function addDate(data) {
   return data.map((deviceData) => ({
@@ -18,6 +21,7 @@ function addDate(data) {
   }));
 }
 
+//This function sets hours with AM or PM
 function getTime(date) {
   const formattedDate = formatDate(date);
   const currDate = new Date(formattedDate);
@@ -27,6 +31,7 @@ function getTime(date) {
   });
 }
 
+//Combines Three Diffrent Device data into one array of objects
 function combineDate(dataA, dataB, dataC) {
   return dataA.map((deviceData, index) => ({
     date: formatDate(deviceData.t),
@@ -48,9 +53,11 @@ function combineDate(dataA, dataB, dataC) {
     Cp10: dataC[index].p10,
   }));
 }
-export const DeviceAData = [addDate(DeviceAJSON)];
-export const DeviceBData = [addDate(DeviceBJSON)];
-export const DeviceCData = [addDate(DeviceCJSON)];
+
+//Each device data with date ISO data format.
+// export const DeviceAData = [addDate(DeviceAJSON)];
+// export const DeviceBData = [addDate(DeviceBJSON)];
+// export const DeviceCData = [addDate(DeviceCJSON)];
 
 export const CombinedData = [
   combineDate(DeviceAJSON, DeviceBJSON, DeviceCJSON),

@@ -1,5 +1,3 @@
-//   static demoUrl = "https://codesandbox.io/s/dashed-line-chart-dxwzg";
-
 import React, { useEffect, useState, useContext } from "react";
 import "../../static/style/layouts/timeSeries.css";
 import {
@@ -13,7 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import DataContext from "../../context/data/dataContext";
-
+//This is from Reharts Package, it provides with beautiful visualization
 const TimeSeries = (props) => {
   const dataContext = useContext(DataContext);
   const { combinedData } = dataContext;

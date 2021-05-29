@@ -2,7 +2,7 @@ import React from "react";
 import DateTimePicker from "../layouts/DateTimePicker";
 import TimeSeries from "../layouts/TimeSeries";
 import { TimeSeriesData } from "../datas/TimeSeriesGraphData";
-
+//Maping of  TimeSeriesData from TimeSeriesGraphData with TimeSeries Component
 const TimeSeriesPage = () => {
   return (
     <div>

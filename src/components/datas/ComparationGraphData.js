@@ -1,3 +1,4 @@
+//Data to map on ComparationGraph component.
 export const comparationData = [
   {
     title: "Pm 1 Units VS 3 Location's Readings",

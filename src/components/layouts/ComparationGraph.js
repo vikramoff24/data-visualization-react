@@ -26,6 +26,7 @@ const ComparationGraph = (props) => {
   }, [combinedData]);
 
   return (
+    //This is from Reharts Package, it provides with beautiful visualization
     <div className="comparation-graph-sec">
       <p className="title">{props.title}</p>
       <ResponsiveContainer width="100%" aspect={3}>

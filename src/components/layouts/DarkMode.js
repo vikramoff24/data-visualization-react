@@ -1,14 +1,15 @@
 import React from "react";
 import "../../static/style/layouts/darkMode.css";
-
+//Darkmode uing localStorage
 const DarkMode = () => {
   let clickedClass = "clicked";
+  //Getting access of body element in dom.
   const body = document.body;
-  // const about = document.getElementsByClassName("about-sec");
   const lightTheme = "light";
   const darkTheme = "dark";
   let theme;
 
+  //localStorage gets value of key theme
   if (localStorage) {
     theme = localStorage.getItem("theme");
   }
@@ -18,17 +19,17 @@ const DarkMode = () => {
   } else {
     body.classList.add(lightTheme);
   }
-
+  //toggles between the themes
   const switchTheme = (e) => {
     if (theme === darkTheme) {
       body.classList.replace(darkTheme, lightTheme);
-      // about.classList.replace(darkTheme, lightTheme);
+
       e.target.classList.remove(clickedClass);
       localStorage.setItem("theme", "light");
       theme = lightTheme;
     } else {
       body.classList.replace(lightTheme, darkTheme);
-      // about.classList.replace(lightTheme, darkTheme);
+
       e.target.classList.add(clickedClass);
       localStorage.setItem("theme", "dark");
       theme = darkTheme;

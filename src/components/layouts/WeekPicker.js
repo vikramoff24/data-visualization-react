@@ -5,6 +5,7 @@ import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import DataContext from "../../context/data/dataContext";
 import "../../static/style/layouts/weekPicker.css";
+//Used for picking a particular week of a month.
 function getWeekDays(weekStart) {
   const days = [weekStart];
   for (let i = 1; i < 7; i += 1) {
@@ -33,30 +34,18 @@ export default function WeekPicker() {
   }, [selectedDays]);
 
   const handleDayChange = (date) => {
-    // this.setState({
-    //   selectedDays: getWeekDays(getWeekRange(date).from),
-    // });
     setSelectedDays(getWeekDays(getWeekRange(date).from));
   };
 
   const handleDayEnter = (date) => {
-    // this.setState({
-    //   hoverRange: getWeekRange(date),
-    // });
     setHoverRange(getWeekRange(date));
   };
 
   const handleDayLeave = () => {
-    // this.setState({
-    //   hoverRange: undefined,
-    // });
     setHoverRange(undefined);
   };
 
   const handleWeekClick = (weekNumber, days, e) => {
-    // this.setState({
-    //   selectedDays: days,
-    // });
     setSelectedDays(days);
   };
 

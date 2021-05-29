@@ -16,6 +16,7 @@ import {
 import dataReducer from "./dataReducer";
 
 const DataState = (props) => {
+  //state in context
   const intialState = {
     deviceAData: null,
     deviceBData: null,
@@ -24,26 +25,32 @@ const DataState = (props) => {
     windyDay: null,
   };
 
+  //using useReducer
   const [state, dispatch] = useReducer(dataReducer, intialState);
 
   //actions
-  const getAData = (selectedDate) => {
-    // console.log(DeviceAData);
-    const deviceA = DeviceAData[0].filter((data) => {
-      // console.log(data);
-      const deviceDate = new Date(data.date);
-      const currDate = new Date(selectedDate);
-      if (deviceDate.setHours(0, 0, 0, 0) === currDate.setHours(0, 0, 0, 0)) {
-        console.log(deviceDate);
-        console.log(currDate);
-      }
-      return deviceDate.setHours(0, 0, 0, 0) === currDate.setHours(0, 0, 0, 0);
-    });
 
-    console.log(deviceA);
+  //function for getting a paricular device data of a day
 
-    dispatch({ type: GET_DEVICE_A_DATA, payload: deviceA });
-  };
+  // const getAData = (selectedDate) => {
+  //   // console.log(DeviceAData);
+  //   const deviceA = DeviceAData[0].filter((data) => {
+  //     // console.log(data);
+  //     const deviceDate = new Date(data.date);
+  //     const currDate = new Date(selectedDate);
+  //     if (deviceDate.setHours(0, 0, 0, 0) === currDate.setHours(0, 0, 0, 0)) {
+  //       console.log(deviceDate);
+  //       console.log(currDate);
+  //     }
+  //     return deviceDate.setHours(0, 0, 0, 0) === currDate.setHours(0, 0, 0, 0);
+  //   });
+
+  //   console.log(deviceA);
+
+  //   dispatch({ type: GET_DEVICE_A_DATA, payload: deviceA });
+  // };
+
+  //function for getting a combined device data of a day
 
   const getCombinedData = (startDate, endDate) => {
     console.log(CombinedData);
@@ -65,6 +72,7 @@ const DataState = (props) => {
     dispatch({ type: GET_COMBINED_DATA, payload: combined });
   };
 
+  //function for getting a most windy day of a week of all devices
   const getMostWindyDay = (weekRange) => {
     const totalwind = (date, device) => {
       const filteredData = CombinedData[0].filter((data) => {
@@ -145,12 +153,12 @@ const DataState = (props) => {
   return (
     <DataContext.Provider
       value={{
-        deviceAData: state.deviceAData,
-        deviceBData: state.deviceBData,
-        deviceBData: state.deviceBData,
+        // deviceAData: state.deviceAData,
+        // deviceBData: state.deviceBData,
+        // deviceBData: state.deviceBData,
         combinedData: state.combinedData,
         windyDay: state.windyDay,
-        getAData,
+        // getAData,
         getCombinedData,
         getMostWindyDay,
       }}

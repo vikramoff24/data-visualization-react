@@ -5,15 +5,18 @@ import DataContext from "../../context/data/dataContext";
 
 import "../../static/style/Pages/home.css";
 const Home = () => {
+  //Making use of Context API, useContext hook helps us to get hold of DataContext
   const dataContext = useContext(DataContext);
+  //windyDay state is destructed from dataContext.
   const { windyDay } = dataContext;
-
+  //useState hook helps us to handle internal state of a component
   const [windy, setWindy] = useState({
     deviceA: "Select A Week to See Data",
     deviceB: "Select A Week to See Data",
     deviceC: "Select A Week to See Data",
   });
 
+  //use Effect is one of the hook of react. It handles lifecycle of a component.
   useEffect(() => {
     if (windyDay !== null && windyDay.deviceA !== undefined) {
       const dateString = {

@@ -1,3 +1,4 @@
+//Data to map on TimeSeries Component
 export const TimeSeriesData = [
   {
     title: "Units of p1,p2.5,p10 of Device A VS Time ",

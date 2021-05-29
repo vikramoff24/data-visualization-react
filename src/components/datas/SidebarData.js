@@ -1,8 +1,10 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
+
 import * as BsIcons from "react-icons/bs";
+
+//This data is used for side bar menu items.
 export const SidebarData = [
   {
     title: "Home",

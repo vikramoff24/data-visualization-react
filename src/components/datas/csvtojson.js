@@ -1,18 +1,9 @@
-import React from "react";
-// import csv from "csvtojson";
+//Code for Converting CSV File into JSON
 import csv from "../../static/dataset/test_dataset_all.csv";
-const csvtojson = (csv) => {
+const CsvToJson = (csv) => {
   {
-    // const jsonArray = await csv().fromFile(DAData);
-    // return jsonArray;
     var lines = csv.split("\n");
-
     var result = [];
-
-    // NOTE: If your columns contain commas in their values, you'll need
-    // to deal with those before doing the next step
-    // (you might convert them to &&& or something, then covert them back later)
-    // jsfiddle showing the issue https://jsfiddle.net/
     var headers = lines[0].split(",");
 
     for (var i = 1; i < lines.length; i++) {
@@ -27,9 +18,9 @@ const csvtojson = (csv) => {
     }
 
     console.log(result);
-    //return result; //JavaScript object
-    return JSON.stringify(result); //JSO
+
+    return JSON.stringify(result);
   }
 };
 
-export const DeviceAData = [csvtojson(csv)];
+export const DeviceAData = [CsvToJson(csv)];

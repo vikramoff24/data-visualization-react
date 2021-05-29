@@ -9,11 +9,10 @@ import {
   DatePicker,
 } from "@material-ui/pickers";
 import DataContext from "../../context/data/dataContext";
+
+//This component is imported from Material-UI package. Used for picking date and time.
+
 export default function DateTimePicker() {
-  // The first commit of Material-UI
-  // const [selectedDate, setSelectedDate] = React.useState(
-  //   new Date("2014-08-18T21:11:54")
-  // );
   const dataContext = useContext(DataContext);
   const { getAData, getCombinedData } = dataContext;
 
@@ -50,17 +49,7 @@ export default function DateTimePicker() {
               handleEndDateChange(date);
             }}
           />
-          {/* <KeyboardDatePicker
-          margin="normal"
-          id="date-picker-dialog"
-          label="Date picker dialog"
-          format="MM/dd/yyyy"
-          value={selectedDate}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            "aria-label": "change date",
-          }}
-        /> */}
+
           <TimePicker
             margin="normal"
             variant="inline"

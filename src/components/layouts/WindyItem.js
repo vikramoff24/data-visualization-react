@@ -1,6 +1,7 @@
 import React from "react";
 import "../../static/style/layouts/windyItem.css";
 
+//component for showing most windy day.
 const WindyItem = (props) => {
   return (
     <div className="windy-item-sec">

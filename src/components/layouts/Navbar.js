@@ -6,7 +6,7 @@ import { SidebarData } from "../datas/SidebarData";
 import "../../static/style/layouts/navbar.css";
 import { IconContext } from "react-icons";
 import DarkMode from "./DarkMode";
-
+//code for nav bar and side bar
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
